@@ -81,3 +81,49 @@ def test_helpers():
     assert detect_language("ما هي المنطقة") == "Arabic"
     assert detect_language("Which region") == "English"
     assert extract_sql("```sql\nSELECT 1;\n```") == "SELECT 1"
+
+
+# ---------------------------------------------------------------- forecasting
+
+from analyst.forecast import Forecaster, is_forecast_question, parse_horizon  # noqa: E402
+
+
+class FakeForecaster(Forecaster):
+    """Baseline backend, so tests never download TimesFM."""
+
+    def _load(self):
+        self.backend = "baseline"
+
+
+MONTHLY_SQL = ("SELECT date_trunc('month', CAST(\"date\" AS DATE)) AS period, "
+               "SUM(households_reached) AS households FROM aid_distributions GROUP BY 1 ORDER BY 1")
+
+
+def test_forecast_detection_and_horizon():
+    assert is_forecast_question("Forecast households for the next 3 months")
+    assert is_forecast_question("توقع عدد الأسر في الأشهر القادمة")
+    assert not is_forecast_question("Which region reached the most households?")
+    assert parse_horizon("next 6 months") == 6
+    assert parse_horizon("الأشهر ٤ أشهر القادمة") == 4
+    assert parse_horizon("next three weeks") == 3
+    assert parse_horizon("forecast it") == 3
+
+
+def test_forecast_single_series(ws):
+    llm = FakeLLM([f"```sql\n{MONTHLY_SQL}\n```", "Expect about 9,000 households a month."])
+    ans = Analyst(ws, llm, FakeForecaster()).ask("Forecast households for the next 3 months")
+    assert not ans.error, ans.error
+    fc = ans.data[ans.data.kind == "forecast"]
+    assert len(fc) == 3 and (fc.low <= fc.value).all() and (fc.value <= fc.high).all()
+    assert fc.period.min() > ans.data[ans.data.kind == "actual"].period.max()
+    assert ans.chart["type"] == "forecast" and ans.chart["color"] is None
+    assert ans.forecast_backend == "baseline"
+
+
+def test_forecast_by_group(ws):
+    sql = MONTHLY_SQL.replace("AS period, ", "AS period, region, ").replace("GROUP BY 1", "GROUP BY 1, 2")
+    llm = FakeLLM([sql, "ok"])
+    ans = Analyst(ws, llm, FakeForecaster()).ask("Predict next 2 months by region")
+    assert not ans.error, ans.error
+    assert ans.chart["color"] == "region"
+    assert len(ans.data[ans.data.kind == "forecast"]) == 5 * 2

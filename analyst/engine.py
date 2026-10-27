@@ -20,6 +20,8 @@ from pathlib import Path
 import duckdb
 import pandas as pd
 
+from .forecast import Forecaster, forecast_frame, is_forecast_question, parse_horizon
+
 DEFAULT_MODEL = os.environ.get("ANALYST_MODEL", "qwen2.5-coder:7b")
 OLLAMA_URL = os.environ.get("OLLAMA_URL", "http://localhost:11434")
 MAX_RETRIES = 2
@@ -161,6 +163,15 @@ Rules:
 - The question may be in Arabic or English; data values may be in either language.
 """
 
+FORECAST_RULES = """
+This is a FORECAST question. Do NOT predict the future in SQL. Return only the
+past values as a time series that a forecasting model will extend:
+- first column: the period, e.g. date_trunc('month', CAST("date" AS DATE)) AS period
+- optional second column: ONE category, only if the question compares groups
+- last column: the numeric measure, aggregated per period
+- ORDER BY the period. Choose month unless the question implies days or weeks.
+"""
+
 EXPLAIN_SYSTEM = """You are a data analyst writing for a non-technical client.
 Given a question, the SQL that was run and its result, write 2-4 short sentences
 that answer the question with the key numbers. Mention anything surprising.
@@ -212,21 +223,27 @@ class Answer:
     explanation: str = ""
     error: str = ""
     attempts: list[dict] = field(default_factory=list)
+    forecast_backend: str = ""  # "timesfm" or "baseline" when this is a forecast
 
 
 class Analyst:
-    def __init__(self, workspace: Workspace, llm=None):
+    def __init__(self, workspace: Workspace, llm=None, forecaster: Forecaster | None = None):
         self.ws = workspace
         self.llm = llm or OllamaClient()
+        self.forecaster = forecaster or Forecaster()
 
     def ask(self, question: str, explain: bool = True) -> Answer:
         ans = Answer(question=question)
+        forecasting = is_forecast_question(question)
+        system = SQL_SYSTEM + (FORECAST_RULES if forecasting else "")
         schema = self.ws.schema_text()
         prompt = f"Schema:\n{schema}\nQuestion: {question}"
         for attempt in range(MAX_RETRIES + 1):
-            sql = extract_sql(self.llm.chat(SQL_SYSTEM, prompt))
+            sql = extract_sql(self.llm.chat(system, prompt))
             try:
                 df = self.ws.run(sql)
+                if forecasting:
+                    df = forecast_frame(df, parse_horizon(question), self.forecaster)
                 ans.sql, ans.data = sql, df
                 ans.attempts.append({"sql": sql, "error": None})
                 break
@@ -242,12 +259,25 @@ class Analyst:
             ans.error = ans.attempts[-1]["error"]
             return ans
 
-        ans.chart = suggest_chart(ans.data)
+        if forecasting:
+            ans.forecast_backend = self.forecaster.backend
+            ans.chart = {"type": "forecast", "x": "period", "y": "value",
+                         "color": next((c for c in ans.data.columns
+                                        if c not in ("period", "value", "low", "high", "kind")), None)}
+        else:
+            ans.chart = suggest_chart(ans.data)
         if explain:
-            preview = ans.data.head(30).to_csv(index=False)
+            data = ans.data
+            note = ""
+            if forecasting:
+                data = pd.concat([data[data.kind == "actual"].tail(12), data[data.kind == "forecast"]])
+                note = ("\nRows with kind='forecast' are predictions from the "
+                        f"{'TimesFM model' if ans.forecast_backend == 'timesfm' else 'baseline model'}; "
+                        "low/high is the 80% likely range. Say they are forecasts.")
+            preview = data.head(60).to_csv(index=False)
             ans.explanation = self.llm.chat(
                 EXPLAIN_SYSTEM.format(language=detect_language(question)),
-                f"Question: {question}\nSQL:\n{ans.sql}\nResult ({len(ans.data)} rows):\n{preview}",
+                f"Question: {question}\nSQL:\n{ans.sql}\nResult ({len(ans.data)} rows):\n{preview}{note}",
                 temperature=0.2,
             ).strip()
         return ans

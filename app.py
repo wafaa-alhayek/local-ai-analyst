@@ -8,6 +8,7 @@ import tempfile
 from pathlib import Path
 
 import altair as alt
+import pandas as pd
 import streamlit as st
 
 from analyst import Analyst, OllamaClient, Workspace
@@ -18,7 +19,7 @@ EXAMPLES = [
     "Which region reached the most households in total?",
     "Show monthly households reached by region",
     "ما هي المنطقة التي وصلها أقل عدد من الأسر في شهر مارس؟",
-    "How many survey responses came from each region and age group?",
+    "Forecast households reached per month for the next 3 months",
 ]
 
 st.set_page_config(page_title="Local AI Analyst", page_icon="📊", layout="wide")
@@ -72,9 +73,33 @@ for c, ex in zip(cols, EXAMPLES):
 question = st.chat_input("Ask a question about your data…") or picked
 
 
+def render_forecast(ans):
+    df, color = ans.data.copy(), ans.chart.get("color")
+    # repeat the last actual point as a forecast row so the two lines join up
+    last = df[df.kind == "actual"].sort_values("period").groupby(color or (lambda _: 0)).tail(1).copy()
+    last["kind"], last["low"], last["high"] = "forecast", last["value"], last["value"]
+    df = pd.concat([ans.data, last]).sort_values("period")
+    base = alt.Chart(df).encode(x=alt.X("period:T", title=None))
+    enc_color = alt.Color(f"{color}:N") if color else alt.value("#3b6fd8")
+    band = base.transform_filter("datum.kind == 'forecast'").mark_area(opacity=0.18).encode(
+        y="low:Q", y2="high:Q", color=enc_color)
+    line = base.mark_line(point=True).encode(
+        y=alt.Y("value:Q", title=None), color=enc_color,
+        strokeDash=alt.StrokeDash("kind:N", title=None,
+                                  scale=alt.Scale(domain=["actual", "forecast"], range=[[1, 0], [6, 4]])),
+        tooltip=list(ans.data.columns))
+    st.altair_chart((band + line).properties(height=360), width="stretch")
+    who = "Google TimesFM 2.5 (local)" if ans.forecast_backend == "timesfm" else \
+        "a simple baseline (install TimesFM for better forecasts)"
+    st.caption(f"Dashed line: forecast by {who}. Shaded area: 80% likely range.")
+
+
 def render_chart(ans):
     spec, df = ans.chart, ans.data
     if not spec:
+        return
+    if spec["type"] == "forecast":
+        render_forecast(ans)
         return
     enc = {"x": alt.X(spec["x"], sort=None if spec["type"] != "bar" else "-y"),
            "y": alt.Y(spec["y"]),

@@ -12,6 +12,7 @@ Ask your data questions in **Arabic or English** and get the answer, a chart, an
 - **Shows its work.** Every answer includes the SQL it ran, so an analyst can check it.
 - **Fixes its own mistakes.** If a query fails, the error goes back to the model, which corrects the query (up to 2 retries).
 - **Safe.** Only read-only `SELECT` queries are allowed. Anything that could change or export data is blocked.
+- **Forecasts.** Ask "forecast … for the next 3 months" and [Google TimesFM 2.5](https://github.com/google-research/timesfm), a 200M-parameter open forecasting model (Apache-2.0), predicts it locally and shows an 80% likely range.
 
 ## How it works
 
@@ -25,12 +26,15 @@ your files (CSV / Excel / Parquet / JSON)
                                    │
                                    ▼
                     table + auto chart + explanation (local LLM)
+
+ forecast question? the SQL returns the history ──► TimesFM 2.5 ──► forecast + 80% range
 ```
 
 | Part | Tool | Why |
 |---|---|---|
 | AI model | Qwen2.5-Coder 7B through [Ollama](https://ollama.com) | Open source and strong at SQL, handles Arabic, and runs on a 16 GB laptop |
 | Data engine | DuckDB | Free, fast, a single file, and reads CSV/Excel directly |
+| Forecasting | Google TimesFM 2.5 (200M) | Open (Apache-2.0, commercial use OK), runs on CPU, zero-shot |
 | App | Streamlit + Altair | A web page that runs locally |
 
 Lighter machines can use `qwen2.5:3b` (8 GB RAM). Pick the model in the sidebar.
@@ -42,6 +46,7 @@ See [docs/SETUP.md](docs/SETUP.md) for the step-by-step guide.
 ```bash
 ollama pull qwen2.5-coder:7b
 pip install -r requirements.txt
+pip install -r requirements-forecast.txt   # optional: TimesFM forecasting
 streamlit run app.py
 ```
 
@@ -60,6 +65,7 @@ python ask.py "Which region reached the most households?" data/aid_distributions
 
 ```
 analyst/engine.py   core: data loading, prompts, SQL guard, retry loop, chart choice
+analyst/forecast.py TimesFM 2.5 wrapper, horizon parsing, baseline fallback
 app.py              Streamlit app
 ask.py              command-line version
 tests/              runs without a model (fake LLM)

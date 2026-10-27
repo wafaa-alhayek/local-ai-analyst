@@ -28,6 +28,14 @@ python -m venv .venv
 pip install -r requirements.txt
 ```
 
+### Optional: forecasting with Google TimesFM
+
+```bash
+pip install -r requirements-forecast.txt
+```
+
+This installs PyTorch and TimesFM, about 1 GB. The first forecast downloads the 200M model (about 900 MB) once from Hugging Face. After that, it works offline. Without it, forecast questions still work using a simple built-in baseline, and the chart says so.
+
 ## 3. Start the app
 
 ```bash
