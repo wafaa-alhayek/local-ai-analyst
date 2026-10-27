@@ -28,6 +28,16 @@ def is_forecast_question(question: str) -> bool:
     return bool(FORECAST_WORDS.search(question))
 
 
+BY_GROUP = re.compile(r"\b(by|each|per|every|across)\b|لكل|حسب|كل\s", re.IGNORECASE)
+
+
+def asks_by_group(question: str) -> bool:
+    """'forecast households by region' -> True; 'forecast households' -> False.
+    'per month' alone doesn't count: it names the period, not a group."""
+    q = re.sub(r"\b(per|each|every)\s+(day|week|month|quarter|year)\b", "", question, flags=re.I)
+    return bool(BY_GROUP.search(q))
+
+
 def parse_horizon(question: str, default: int = 3) -> int:
     """'next 3 months' -> 3; Arabic/Western digits; falls back to default."""
     q = question.translate(str.maketrans("٠١٢٣٤٥٦٧٨٩", "0123456789")).lower()
@@ -111,8 +121,10 @@ def baseline_forecast(series, horizon):
     return np.array(points), np.array(lows), np.array(highs)
 
 
-def forecast_frame(df: pd.DataFrame, horizon: int, forecaster: Forecaster) -> pd.DataFrame:
+def forecast_frame(df: pd.DataFrame, horizon: int, forecaster: Forecaster,
+                   keep_groups: bool = True) -> pd.DataFrame:
     """Turn an SQL result (date, [group], value) into history + forecast rows.
+    keep_groups=False sums the groups per period (the question didn't ask for them).
 
     Output columns: period, [group], value, low, high, kind ('actual'|'forecast').
     """
@@ -125,7 +137,7 @@ def forecast_frame(df: pd.DataFrame, horizon: int, forecaster: Forecaster) -> pd
         raise ValueError("The query result has no numeric column to forecast.")
     value_col = num_cols[-1]
     group_cols = [c for c in df.columns if c not in (date_col, value_col) and c not in num_cols]
-    group_col = group_cols[0] if group_cols else None
+    group_col = group_cols[0] if group_cols and keep_groups else None
 
     df = df.sort_values(date_col)
     freq = infer_freq(df[date_col])

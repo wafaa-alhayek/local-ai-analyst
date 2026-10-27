@@ -127,3 +127,39 @@ def test_forecast_by_group(ws):
     assert not ans.error, ans.error
     assert ans.chart["color"] == "region"
     assert len(ans.data[ans.data.kind == "forecast"]) == 5 * 2
+
+
+# ---------------------------------------------------------------- lessons from the first real-model run
+
+from analyst.engine import drop_aggregate_limit, facts  # noqa: E402
+from analyst.forecast import asks_by_group  # noqa: E402
+
+
+def test_limit_dropped_on_rankings_only():
+    q = "Which region reached the most households?"
+    sql = "SELECT region, SUM(x) AS s FROM t GROUP BY region ORDER BY s DESC LIMIT 1"
+    assert not drop_aggregate_limit(sql, q).upper().endswith("LIMIT 1")
+    assert drop_aggregate_limit(sql, "Top 3 regions").endswith("LIMIT 1")
+    assert drop_aggregate_limit("SELECT * FROM t LIMIT 50", q).endswith("LIMIT 50")
+
+
+def test_asks_by_group():
+    assert asks_by_group("Forecast households by region")
+    assert asks_by_group("توقع عدد الأسر لكل منطقة")
+    assert not asks_by_group("Forecast households reached per month for the next 3 months")
+    assert not asks_by_group("توقع عدد الأسر في رفح")
+
+
+def test_forecast_sums_groups_nobody_asked_for(ws):
+    sql = MONTHLY_SQL.replace("AS period, ", "AS period, region, ").replace("GROUP BY 1", "GROUP BY 1, 2")
+    ans = Analyst(ws, FakeLLM([sql, "ok"]), FakeForecaster()).ask("Forecast households for the next 3 months")
+    assert "region" not in ans.data.columns and ans.chart["color"] is None
+    assert len(ans.data[ans.data.kind == "forecast"]) == 3
+
+
+def test_facts_are_exact_numbers(ws):
+    df = ws.run("SELECT region, SUM(households_reached) AS hh FROM aid_distributions GROUP BY 1")
+    f = facts(df)
+    top = df.sort_values("hh").iloc[-1]
+    assert f"highest: {top.region} = {top.hh:,.0f}" in f
+    assert "lowest:" in f

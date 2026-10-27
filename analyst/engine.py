@@ -20,7 +20,7 @@ from pathlib import Path
 import duckdb
 import pandas as pd
 
-from .forecast import Forecaster, forecast_frame, is_forecast_question, parse_horizon
+from .forecast import Forecaster, asks_by_group, forecast_frame, is_forecast_question, parse_horizon
 
 DEFAULT_MODEL = os.environ.get("ANALYST_MODEL", "qwen2.5-coder:7b")
 OLLAMA_URL = os.environ.get("OLLAMA_URL", "http://localhost:11434")
@@ -159,7 +159,12 @@ Rules:
 - Use only the tables and columns in the schema. Quote column names with double quotes.
 - Aggregate when the question asks about totals, trends or comparisons; order results sensibly.
 - For trends over time use date_trunc('month', CAST("date" AS DATE)) or similar.
-- Limit raw row listings to 50 rows.
+- To pick one month, filter with date_trunc('month', CAST("date" AS DATE)) = DATE '2026-03-01'.
+  Never compare a date with a partial string such as '2026-03'.
+- Never filter on CURRENT_DATE or now(): use the dates in the data.
+- Never add LIMIT to an aggregated result. For "which ... most / least" questions
+  return every group, ordered, so they can be compared.
+- Limit raw row listings (no aggregation) to 50 rows.
 - The question may be in Arabic or English; data values may be in either language.
 """
 
@@ -167,16 +172,68 @@ FORECAST_RULES = """
 This is a FORECAST question. Do NOT predict the future in SQL. Return only the
 past values as a time series that a forecasting model will extend:
 - first column: the period, e.g. date_trunc('month', CAST("date" AS DATE)) AS period
-- optional second column: ONE category, only if the question compares groups
+- optional second column: ONE category, ONLY if the question says "by", "each"
+  or "per" a category (e.g. "by region"); otherwise sum everything per period
+- use ALL the history in the table: no date filters, no LIMIT
 - last column: the numeric measure, aggregated per period
 - ORDER BY the period. Choose month unless the question implies days or weeks.
 """
 
 EXPLAIN_SYSTEM = """You are a data analyst writing for a non-technical client.
-Given a question, the SQL that was run and its result, write 2-4 short sentences
-that answer the question with the key numbers. Mention anything surprising.
-Do not invent numbers that are not in the result. Reply in {language}.
+Given a question and FACTS computed from the query result, write 2-3 short
+sentences that answer the question. Use only numbers that appear in FACTS,
+copied exactly; never add, average or invent numbers. Mention anything that
+stands out. Reply in {language}.
 """
+
+
+def facts(df: pd.DataFrame, forecasting: bool = False, max_items: int = 12) -> str:
+    """Plain-text facts the explanation must stick to (small models invent numbers
+    when asked to read a whole table)."""
+    def fmt(v):
+        if isinstance(v, (int, float)) and not isinstance(v, bool):
+            return f"{v:,.0f}" if abs(v) >= 100 else f"{v:,.2f}".rstrip("0").rstrip(".")
+        if isinstance(v, pd.Timestamp):
+            return f"{v:%B %Y}"
+        return str(v)
+
+    lines = []
+    if forecasting:
+        group = next((c for c in df.columns if c not in ("period", "value", "low", "high", "kind")), None)
+        for key, g in (df.groupby(group, sort=True) if group else [(None, df)]):
+            name = f"{key}: " if group else ""
+            act, fc = g[g.kind == "actual"], g[g.kind == "forecast"]
+            last = act.sort_values("period").iloc[-1]
+            lines.append(f"{name}last actual month {fmt(last.period)} = {fmt(last.value)}; "
+                         f"average of the actual months = {fmt(act.value.mean())}")
+            for r in fc.itertuples():
+                lines.append(f"{name}FORECAST {fmt(r.period)} = {fmt(r.value)} "
+                             f"(likely between {fmt(r.low)} and {fmt(r.high)})")
+        return "\n".join(lines[:max_items * 2])
+
+    num = [c for c in df.columns if pd.api.types.is_numeric_dtype(df[c])]
+    if not num or df.empty:
+        return df.head(max_items).to_csv(index=False)
+    y = num[-1]
+    label_cols = [c for c in df.columns if c != y and c not in num[:-1]] or [c for c in df.columns if c != y]
+    label = lambda r: ", ".join(fmt(r[c]) for c in label_cols)  # noqa: E731
+    lines.append(f"{len(df)} rows; measure = {y}")
+    ranked = df.sort_values(y, ascending=False)
+    hi, lo = ranked.iloc[0], ranked.iloc[-1]
+    lines.append(f"highest: {label(hi)} = {fmt(hi[y])}")
+    if len(df) > 1:
+        lines.append(f"lowest: {label(lo)} = {fmt(lo[y])}")
+    if len(df) <= max_items:
+        lines += [f"{label(r)} = {fmt(r[y])}" for _, r in ranked.iterrows()]
+    return "\n".join(lines)
+
+
+def drop_aggregate_limit(sql: str, question: str) -> str:
+    """Small models add LIMIT 1 to 'which region most?' and lose the comparison.
+    Keep a LIMIT only when the question asks for a number of results ('top 3')."""
+    if re.search(r"\bgroup\s+by\b", sql, re.I) and not re.search(r"\d|\btop\b", question, re.I):
+        return re.sub(r"\s+limit\s+\d+\s*$", "", sql, flags=re.I)
+    return sql
 
 
 def detect_language(text: str) -> str:
@@ -239,11 +296,12 @@ class Analyst:
         schema = self.ws.schema_text()
         prompt = f"Schema:\n{schema}\nQuestion: {question}"
         for attempt in range(MAX_RETRIES + 1):
-            sql = extract_sql(self.llm.chat(system, prompt))
+            sql = drop_aggregate_limit(extract_sql(self.llm.chat(system, prompt)), question)
             try:
                 df = self.ws.run(sql)
                 if forecasting:
-                    df = forecast_frame(df, parse_horizon(question), self.forecaster)
+                    df = forecast_frame(df, parse_horizon(question), self.forecaster,
+                                        keep_groups=asks_by_group(question))
                 ans.sql, ans.data = sql, df
                 ans.attempts.append({"sql": sql, "error": None})
                 break
@@ -267,17 +325,14 @@ class Analyst:
         else:
             ans.chart = suggest_chart(ans.data)
         if explain:
-            data = ans.data
             note = ""
             if forecasting:
-                data = pd.concat([data[data.kind == "actual"].tail(12), data[data.kind == "forecast"]])
-                note = ("\nRows with kind='forecast' are predictions from the "
-                        f"{'TimesFM model' if ans.forecast_backend == 'timesfm' else 'baseline model'}; "
-                        "low/high is the 80% likely range. Say they are forecasts.")
-            preview = data.head(60).to_csv(index=False)
+                note = ("\nFORECAST lines are predictions by the "
+                        f"{'TimesFM model' if ans.forecast_backend == 'timesfm' else 'baseline model'}, "
+                        "not actual data; say they are forecasts and give the likely range.")
             ans.explanation = self.llm.chat(
                 EXPLAIN_SYSTEM.format(language=detect_language(question)),
-                f"Question: {question}\nSQL:\n{ans.sql}\nResult ({len(ans.data)} rows):\n{preview}{note}",
+                f"Question: {question}\nFACTS:\n{facts(ans.data, forecasting)}{note}",
                 temperature=0.2,
             ).strip()
         return ans
