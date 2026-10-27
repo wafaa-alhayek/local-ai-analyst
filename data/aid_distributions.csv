@@ -1,0 +1,601 @@
+distribution_id,date,region,partner,item,quantity,households_reached,female_headed_households
+D0001,2026-06-19,Gaza City,Partner A,Blanket,181,181,71
+D0002,2026-02-22,Middle Area,Partner C,Medical kit,29,29,4
+D0003,2026-08-15,Khan Younis,Partner A,Food parcel,228,76,21
+D0004,2026-03-09,Gaza City,Partner C,Medical kit,30,30,4
+D0005,2026-04-28,North Gaza,Partner B,Medical kit,49,49,9
+D0006,2026-03-06,Rafah,Partner C,Water (litres),2365,55,9
+D0007,2026-04-11,Middle Area,Partner C,Food parcel,155,155,49
+D0008,2026-04-20,Khan Younis,Partner B,Medical kit,124,124,40
+D0009,2026-08-25,Middle Area,Partner A,Water (litres),8502,78,29
+D0010,2026-02-15,Rafah,Partner B,Water (litres),9387,149,54
+D0011,2026-06-01,Rafah,Partner C,Food parcel,90,45,8
+D0012,2026-06-29,Gaza City,Partner A,Blanket,122,122,46
+D0013,2026-06-14,Middle Area,Partner B,Water (litres),15698,167,64
+D0014,2026-02-09,North Gaza,Partner C,Water (litres),14280,136,23
+D0015,2026-06-12,Rafah,Partner C,Blanket,348,87,36
+D0016,2026-07-01,North Gaza,Partner A,Blanket,105,105,31
+D0017,2026-04-26,Middle Area,Partner A,Hygiene kit,408,204,54
+D0018,2026-09-16,North Gaza,Partner B,Hygiene kit,258,129,53
+D0019,2026-08-13,Rafah,Partner B,Water (litres),12675,195,69
+D0020,2026-07-18,Gaza City,Partner A,Hygiene kit,36,36,7
+D0021,2026-05-04,North Gaza,Partner A,Blanket,495,165,38
+D0022,2026-03-20,Khan Younis,Partner C,Medical kit,109,109,47
+D0023,2026-09-25,Rafah,Partner C,Food parcel,393,131,35
+D0024,2026-07-28,Khan Younis,Partner C,Food parcel,276,138,23
+D0025,2026-02-08,Gaza City,Partner A,Blanket,168,56,18
+D0026,2026-02-26,North Gaza,Partner C,Medical kit,53,53,23
+D0027,2026-01-18,North Gaza,Partner B,Hygiene kit,172,172,58
+D0028,2026-07-01,Rafah,Partner A,Water (litres),4624,136,55
+D0029,2026-08-31,Khan Younis,Partner A,Blanket,188,94,16
+D0030,2026-06-29,Middle Area,Partner A,Blanket,192,192,40
+D0031,2026-10-02,Middle Area,Partner C,Hygiene kit,191,191,72
+D0032,2026-06-06,North Gaza,Partner B,Water (litres),6027,147,37
+D0033,2026-04-29,Rafah,Partner C,Medical kit,214,214,72
+D0034,2026-04-14,Gaza City,Partner A,Blanket,408,204,62
+D0035,2026-07-06,North Gaza,Partner B,Food parcel,434,217,49
+D0036,2026-06-30,Khan Younis,Partner A,Water (litres),5184,108,19
+D0037,2026-09-02,Gaza City,Partner B,Water (litres),6633,67,29
+D0038,2026-01-05,Khan Younis,Partner C,Water (litres),6570,219,87
+D0039,2026-03-07,Khan Younis,Partner A,Hygiene kit,274,137,52
+D0040,2026-06-24,North Gaza,Partner B,Blanket,133,133,48
+D0041,2026-04-02,Gaza City,Partner C,Food parcel,106,53,20
+D0042,2026-03-20,Rafah,Partner C,Medical kit,47,47,9
+D0043,2026-03-13,North Gaza,Partner C,Food parcel,657,219,39
+D0044,2026-03-17,Khan Younis,Partner A,Hygiene kit,138,69,14
+D0045,2026-09-18,Gaza City,Partner B,Medical kit,98,98,39
+D0046,2026-02-05,Middle Area,Partner C,Blanket,736,184,73
+D0047,2026-09-18,Gaza City,Partner C,Medical kit,53,53,21
+D0048,2026-04-08,Rafah,Partner A,Food parcel,213,213,40
+D0049,2026-03-07,Rafah,Partner C,Food parcel,102,34,10
+D0050,2026-09-09,North Gaza,Partner A,Medical kit,29,29,6
+D0051,2026-02-24,Rafah,Partner A,Blanket,158,158,44
+D0052,2026-09-20,Rafah,Partner C,Medical kit,66,66,18
+D0053,2026-09-06,Rafah,Partner C,Hygiene kit,386,193,82
+D0054,2026-04-18,Khan Younis,Partner A,Hygiene kit,242,121,34
+D0055,2026-02-11,Gaza City,Partner A,Blanket,99,33,12
+D0056,2026-03-25,Middle Area,Partner A,Hygiene kit,158,79,17
+D0057,2026-02-22,Khan Younis,Partner C,Blanket,112,56,11
+D0058,2026-08-13,Rafah,Partner B,Blanket,202,101,25
+D0059,2026-02-21,Middle Area,Partner C,Food parcel,202,101,28
+D0060,2026-01-14,Khan Younis,Partner C,Water (litres),8379,147,44
+D0061,2026-02-06,North Gaza,Partner A,Hygiene kit,82,41,9
+D0062,2026-04-07,Middle Area,Partner C,Hygiene kit,246,123,33
+D0063,2026-09-25,Rafah,Partner B,Blanket,194,194,45
+D0064,2026-04-08,Khan Younis,Partner A,Food parcel,249,83,14
+D0065,2026-05-18,North Gaza,Partner A,Medical kit,71,71,29
+D0066,2026-08-25,North Gaza,Partner B,Water (litres),8424,156,52
+D0067,2026-01-27,Rafah,Partner A,Hygiene kit,86,43,7
+D0068,2026-04-18,Middle Area,Partner A,Water (litres),8550,150,42
+D0069,2026-04-06,Middle Area,Partner A,Water (litres),11440,220,35
+D0070,2026-01-14,Rafah,Partner C,Medical kit,63,63,14
+D0071,2026-08-21,North Gaza,Partner B,Blanket,732,183,80
+D0072,2026-06-11,Gaza City,Partner A,Hygiene kit,102,102,27
+D0073,2026-07-01,North Gaza,Partner A,Hygiene kit,36,18,5
+D0074,2026-02-02,North Gaza,Partner C,Blanket,432,144,47
+D0075,2026-06-04,North Gaza,Partner A,Blanket,186,62,17
+D0076,2026-05-19,Middle Area,Partner B,Water (litres),7905,155,24
+D0077,2026-06-12,Gaza City,Partner A,Water (litres),3782,61,16
+D0078,2026-09-05,Middle Area,Partner A,Medical kit,182,182,54
+D0079,2026-01-07,North Gaza,Partner A,Water (litres),2627,37,12
+D0080,2026-07-25,North Gaza,Partner C,Water (litres),4508,92,16
+D0081,2026-10-02,Gaza City,Partner B,Medical kit,114,114,22
+D0082,2026-03-20,North Gaza,Partner B,Medical kit,175,175,74
+D0083,2026-09-20,Rafah,Partner C,Food parcel,570,190,67
+D0084,2026-05-02,North Gaza,Partner A,Food parcel,75,25,6
+D0085,2026-02-27,Khan Younis,Partner A,Blanket,157,157,53
+D0086,2026-05-10,Khan Younis,Partner B,Water (litres),420,15,5
+D0087,2026-09-19,Rafah,Partner C,Food parcel,183,183,68
+D0088,2026-09-04,Middle Area,Partner A,Food parcel,246,82,30
+D0089,2026-05-03,Khan Younis,Partner A,Blanket,448,112,47
+D0090,2026-06-01,North Gaza,Partner C,Medical kit,176,176,30
+D0091,2026-03-21,Middle Area,Partner C,Water (litres),19548,181,43
+D0092,2026-03-14,North Gaza,Partner B,Blanket,90,30,13
+D0093,2026-02-24,Gaza City,Partner C,Blanket,267,89,25
+D0094,2026-08-31,North Gaza,Partner B,Medical kit,66,66,28
+D0095,2026-01-13,Middle Area,Partner C,Blanket,136,34,15
+D0096,2026-07-22,Gaza City,Partner C,Hygiene kit,34,34,6
+D0097,2026-09-30,Middle Area,Partner C,Water (litres),4800,48,14
+D0098,2026-03-03,Middle Area,Partner B,Hygiene kit,284,142,22
+D0099,2026-01-06,Khan Younis,Partner B,Blanket,236,118,32
+D0100,2026-07-16,Middle Area,Partner A,Food parcel,198,99,37
+D0101,2026-07-27,North Gaza,Partner A,Hygiene kit,394,197,44
+D0102,2026-02-07,Khan Younis,Partner A,Blanket,495,165,70
+D0103,2026-05-25,North Gaza,Partner A,Water (litres),4264,41,9
+D0104,2026-03-22,Gaza City,Partner C,Water (litres),7560,126,26
+D0105,2026-07-15,Khan Younis,Partner C,Food parcel,418,209,88
+D0106,2026-04-19,North Gaza,Partner B,Food parcel,404,202,67
+D0107,2026-03-16,Middle Area,Partner C,Blanket,54,27,5
+D0108,2026-08-05,Middle Area,Partner B,Water (litres),10374,91,33
+D0109,2026-05-18,Khan Younis,Partner B,Hygiene kit,184,92,17
+D0110,2026-03-28,North Gaza,Partner B,Hygiene kit,143,143,40
+D0111,2026-06-24,Khan Younis,Partner C,Blanket,100,50,11
+D0112,2026-04-04,Middle Area,Partner B,Medical kit,38,38,9
+D0113,2026-04-18,North Gaza,Partner B,Blanket,226,113,29
+D0114,2026-06-27,North Gaza,Partner C,Blanket,258,86,16
+D0115,2026-09-19,Rafah,Partner B,Hygiene kit,38,38,10
+D0116,2026-08-21,Khan Younis,Partner A,Water (litres),480,20,5
+D0117,2026-09-04,Rafah,Partner A,Blanket,60,15,6
+D0118,2026-10-02,Khan Younis,Partner A,Blanket,156,78,15
+D0119,2026-09-29,North Gaza,Partner C,Blanket,36,36,5
+D0120,2026-03-10,Gaza City,Partner C,Medical kit,24,24,10
+D0121,2026-05-13,Rafah,Partner A,Blanket,193,193,33
+D0122,2026-09-30,Rafah,Partner B,Hygiene kit,114,114,44
+D0123,2026-01-05,North Gaza,Partner B,Medical kit,92,92,40
+D0124,2026-05-09,Khan Younis,Partner C,Medical kit,75,75,11
+D0125,2026-08-03,Middle Area,Partner A,Food parcel,40,20,8
+D0126,2026-08-08,North Gaza,Partner C,Water (litres),5402,73,31
+D0127,2026-05-01,Khan Younis,Partner B,Food parcel,579,193,53
+D0128,2026-07-26,Gaza City,Partner B,Food parcel,657,219,88
+D0129,2026-02-08,Gaza City,Partner B,Blanket,132,66,14
+D0130,2026-04-28,Middle Area,Partner C,Water (litres),3486,42,13
+D0131,2026-04-29,Khan Younis,Partner A,Blanket,370,185,78
+D0132,2026-02-01,Gaza City,Partner A,Food parcel,334,167,27
+D0133,2026-02-04,Gaza City,Partner C,Blanket,390,130,48
+D0134,2026-02-14,Gaza City,Partner A,Water (litres),6489,63,27
+D0135,2026-09-01,North Gaza,Partner C,Water (litres),12580,185,74
+D0136,2026-06-23,Khan Younis,Partner A,Hygiene kit,42,42,9
+D0137,2026-07-03,Khan Younis,Partner A,Food parcel,316,158,40
+D0138,2026-06-12,Khan Younis,Partner C,Food parcel,54,27,5
+D0139,2026-08-21,Gaza City,Partner C,Water (litres),8640,108,17
+D0140,2026-08-03,Gaza City,Partner B,Blanket,25,25,7
+D0141,2026-02-05,Middle Area,Partner A,Hygiene kit,412,206,53
+D0142,2026-06-25,Rafah,Partner C,Food parcel,246,82,29
+D0143,2026-05-26,Middle Area,Partner C,Food parcel,597,199,86
+D0144,2026-02-07,North Gaza,Partner B,Hygiene kit,84,42,18
+D0145,2026-07-21,Middle Area,Partner A,Blanket,564,141,28
+D0146,2026-06-09,Gaza City,Partner B,Medical kit,75,75,21
+D0147,2026-02-14,Rafah,Partner A,Hygiene kit,115,115,31
+D0148,2026-01-22,Khan Younis,Partner B,Medical kit,154,154,68
+D0149,2026-02-27,North Gaza,Partner A,Water (litres),8004,174,31
+D0150,2026-09-17,Khan Younis,Partner A,Hygiene kit,148,74,21
+D0151,2026-05-05,Rafah,Partner B,Food parcel,428,214,50
+D0152,2026-05-22,Middle Area,Partner B,Water (litres),9135,203,57
+D0153,2026-04-10,Gaza City,Partner B,Hygiene kit,54,54,13
+D0154,2026-07-26,Middle Area,Partner C,Hygiene kit,144,144,49
+D0155,2026-02-25,Khan Younis,Partner A,Food parcel,82,41,17
+D0156,2026-05-03,Khan Younis,Partner B,Water (litres),1225,25,4
+D0157,2026-04-12,Rafah,Partner A,Medical kit,64,64,19
+D0158,2026-04-06,Khan Younis,Partner C,Medical kit,81,81,14
+D0159,2026-07-03,Gaza City,Partner B,Food parcel,109,109,17
+D0160,2026-05-15,North Gaza,Partner C,Medical kit,202,202,79
+D0161,2026-06-21,Khan Younis,Partner C,Water (litres),3658,62,10
+D0162,2026-01-21,Khan Younis,Partner A,Medical kit,138,138,24
+D0163,2026-07-26,Rafah,Partner C,Hygiene kit,178,178,61
+D0164,2026-07-27,Middle Area,Partner C,Blanket,261,87,23
+D0165,2026-01-31,Middle Area,Partner B,Medical kit,106,106,16
+D0166,2026-07-10,Gaza City,Partner B,Blanket,402,201,86
+D0167,2026-08-15,Gaza City,Partner A,Blanket,176,44,14
+D0168,2026-07-10,Khan Younis,Partner A,Hygiene kit,48,48,15
+D0169,2026-07-27,North Gaza,Partner B,Medical kit,174,174,33
+D0170,2026-05-30,Gaza City,Partner A,Medical kit,58,58,15
+D0171,2026-04-16,Middle Area,Partner B,Hygiene kit,52,26,4
+D0172,2026-07-22,North Gaza,Partner A,Medical kit,191,191,64
+D0173,2026-04-15,Khan Younis,Partner A,Hygiene kit,159,159,42
+D0174,2026-09-27,Gaza City,Partner A,Blanket,212,106,23
+D0175,2026-04-13,North Gaza,Partner C,Medical kit,208,208,72
+D0176,2026-06-19,North Gaza,Partner B,Blanket,504,168,57
+D0177,2026-06-11,Rafah,Partner B,Hygiene kit,246,123,34
+D0178,2026-08-17,Gaza City,Partner C,Food parcel,30,15,4
+D0179,2026-08-21,Rafah,Partner B,Blanket,240,60,10
+D0180,2026-03-11,Middle Area,Partner A,Blanket,432,108,32
+D0181,2026-01-25,North Gaza,Partner C,Hygiene kit,72,36,13
+D0182,2026-09-23,North Gaza,Partner C,Food parcel,414,207,71
+D0183,2026-03-15,North Gaza,Partner C,Food parcel,516,172,67
+D0184,2026-04-14,Gaza City,Partner A,Blanket,176,88,14
+D0185,2026-07-03,Rafah,Partner B,Water (litres),5390,55,12
+D0186,2026-08-26,Gaza City,Partner B,Water (litres),6578,143,46
+D0187,2026-09-21,Gaza City,Partner A,Water (litres),4950,110,22
+D0188,2026-03-28,Middle Area,Partner A,Water (litres),13320,111,25
+D0189,2026-01-29,Middle Area,Partner C,Blanket,157,157,35
+D0190,2026-07-25,Middle Area,Partner B,Water (litres),10323,111,21
+D0191,2026-06-23,North Gaza,Partner A,Blanket,73,73,17
+D0192,2026-09-26,Middle Area,Partner C,Water (litres),18512,178,74
+D0193,2026-01-05,North Gaza,Partner B,Hygiene kit,106,53,14
+D0194,2026-07-10,North Gaza,Partner A,Hygiene kit,140,140,21
+D0195,2026-01-06,Rafah,Partner A,Water (litres),7912,92,23
+D0196,2026-04-29,Khan Younis,Partner C,Medical kit,92,92,19
+D0197,2026-09-05,Gaza City,Partner A,Hygiene kit,18,18,5
+D0198,2026-02-06,Gaza City,Partner B,Water (litres),2457,117,19
+D0199,2026-07-03,Rafah,Partner C,Medical kit,128,128,28
+D0200,2026-01-05,North Gaza,Partner A,Food parcel,302,151,31
+D0201,2026-03-27,North Gaza,Partner C,Food parcel,54,18,6
+D0202,2026-04-15,Gaza City,Partner C,Blanket,264,66,26
+D0203,2026-04-04,Rafah,Partner B,Water (litres),3100,31,5
+D0204,2026-09-06,Rafah,Partner B,Food parcel,333,111,47
+D0205,2026-02-15,Khan Younis,Partner A,Hygiene kit,144,72,15
+D0206,2026-01-24,North Gaza,Partner C,Water (litres),10918,206,74
+D0207,2026-05-21,Rafah,Partner C,Blanket,570,190,45
+D0208,2026-04-26,North Gaza,Partner A,Medical kit,18,18,7
+D0209,2026-04-18,Gaza City,Partner B,Water (litres),3968,64,21
+D0210,2026-07-18,Rafah,Partner C,Blanket,135,135,54
+D0211,2026-08-16,Gaza City,Partner A,Medical kit,93,93,31
+D0212,2026-02-13,Rafah,Partner A,Hygiene kit,52,52,9
+D0213,2026-03-28,Middle Area,Partner A,Hygiene kit,194,194,31
+D0214,2026-01-26,North Gaza,Partner C,Food parcel,62,31,6
+D0215,2026-02-07,Khan Younis,Partner A,Food parcel,78,78,14
+D0216,2026-01-22,North Gaza,Partner A,Water (litres),4932,137,24
+D0217,2026-04-19,Middle Area,Partner B,Water (litres),5353,101,15
+D0218,2026-05-16,Middle Area,Partner B,Food parcel,396,198,75
+D0219,2026-09-19,Khan Younis,Partner C,Water (litres),3979,173,66
+D0220,2026-01-20,Khan Younis,Partner A,Medical kit,212,212,61
+D0221,2026-01-29,Rafah,Partner C,Medical kit,70,70,22
+D0222,2026-06-01,Gaza City,Partner C,Blanket,30,15,3
+D0223,2026-02-01,North Gaza,Partner A,Water (litres),11480,140,50
+D0224,2026-04-09,Khan Younis,Partner C,Medical kit,103,103,33
+D0225,2026-03-27,Middle Area,Partner A,Hygiene kit,388,194,38
+D0226,2026-02-15,Khan Younis,Partner A,Medical kit,216,216,55
+D0227,2026-07-29,Khan Younis,Partner C,Food parcel,123,123,32
+D0228,2026-06-09,Middle Area,Partner C,Blanket,308,154,40
+D0229,2026-05-04,Khan Younis,Partner C,Hygiene kit,151,151,38
+D0230,2026-06-21,Rafah,Partner C,Hygiene kit,260,130,26
+D0231,2026-08-17,Middle Area,Partner A,Medical kit,74,74,21
+D0232,2026-05-06,Rafah,Partner B,Hygiene kit,83,83,30
+D0233,2026-05-11,Middle Area,Partner B,Medical kit,148,148,32
+D0234,2026-04-11,Middle Area,Partner C,Food parcel,57,57,11
+D0235,2026-03-23,Gaza City,Partner B,Water (litres),15150,202,46
+D0236,2026-03-01,North Gaza,Partner B,Water (litres),5293,67,10
+D0237,2026-07-28,Khan Younis,Partner C,Hygiene kit,286,143,41
+D0238,2026-03-18,Middle Area,Partner B,Medical kit,203,203,75
+D0239,2026-08-13,Rafah,Partner C,Medical kit,206,206,83
+D0240,2026-05-02,Gaza City,Partner B,Food parcel,262,131,29
+D0241,2026-02-24,Khan Younis,Partner B,Hygiene kit,215,215,48
+D0242,2026-08-09,Khan Younis,Partner C,Blanket,80,20,6
+D0243,2026-04-08,Middle Area,Partner B,Food parcel,114,114,18
+D0244,2026-04-26,Gaza City,Partner B,Hygiene kit,147,147,59
+D0245,2026-08-26,Rafah,Partner B,Hygiene kit,198,198,67
+D0246,2026-07-13,Rafah,Partner C,Water (litres),9360,120,25
+D0247,2026-04-09,Khan Younis,Partner A,Medical kit,210,210,71
+D0248,2026-05-14,Middle Area,Partner A,Blanket,117,117,20
+D0249,2026-08-08,Middle Area,Partner A,Medical kit,82,82,19
+D0250,2026-07-29,Rafah,Partner B,Hygiene kit,440,220,46
+D0251,2026-03-12,North Gaza,Partner C,Hygiene kit,135,135,53
+D0252,2026-03-20,Middle Area,Partner B,Blanket,268,134,51
+D0253,2026-09-02,Middle Area,Partner C,Hygiene kit,166,83,29
+D0254,2026-08-11,Gaza City,Partner C,Blanket,45,15,3
+D0255,2026-06-08,Middle Area,Partner B,Blanket,139,139,48
+D0256,2026-07-09,Gaza City,Partner A,Water (litres),3390,113,45
+D0257,2026-06-20,Gaza City,Partner C,Medical kit,103,103,35
+D0258,2026-04-22,North Gaza,Partner C,Water (litres),2528,79,25
+D0259,2026-05-04,Gaza City,Partner A,Blanket,206,103,43
+D0260,2026-03-31,Rafah,Partner A,Medical kit,75,75,15
+D0261,2026-04-24,Rafah,Partner B,Food parcel,612,204,84
+D0262,2026-03-06,Middle Area,Partner A,Blanket,296,74,22
+D0263,2026-02-03,Khan Younis,Partner C,Blanket,204,51,11
+D0264,2026-03-30,Rafah,Partner A,Medical kit,71,71,28
+D0265,2026-09-01,Rafah,Partner B,Blanket,740,185,48
+D0266,2026-08-07,North Gaza,Partner B,Hygiene kit,178,178,27
+D0267,2026-01-28,Middle Area,Partner B,Food parcel,290,145,54
+D0268,2026-03-19,North Gaza,Partner B,Hygiene kit,198,198,49
+D0269,2026-07-11,Middle Area,Partner C,Blanket,428,214,50
+D0270,2026-06-29,Khan Younis,Partner A,Water (litres),8892,156,37
+D0271,2026-09-14,Khan Younis,Partner B,Water (litres),12012,143,36
+D0272,2026-04-19,Khan Younis,Partner A,Food parcel,198,99,36
+D0273,2026-03-11,Rafah,Partner A,Food parcel,150,75,27
+D0274,2026-07-31,Rafah,Partner B,Medical kit,27,27,4
+D0275,2026-01-28,Gaza City,Partner C,Blanket,170,170,65
+D0276,2026-07-16,Rafah,Partner C,Hygiene kit,175,175,37
+D0277,2026-08-27,Gaza City,Partner A,Food parcel,184,184,50
+D0278,2026-02-25,North Gaza,Partner B,Water (litres),4550,50,18
+D0279,2026-06-08,Gaza City,Partner B,Blanket,23,23,6
+D0280,2026-02-01,Khan Younis,Partner A,Medical kit,148,148,56
+D0281,2026-08-08,Rafah,Partner A,Blanket,129,129,45
+D0282,2026-03-25,Khan Younis,Partner A,Blanket,155,155,53
+D0283,2026-04-23,Gaza City,Partner A,Food parcel,124,124,44
+D0284,2026-03-08,North Gaza,Partner A,Hygiene kit,92,46,7
+D0285,2026-05-09,Khan Younis,Partner B,Hygiene kit,27,27,9
+D0286,2026-02-17,Middle Area,Partner B,Medical kit,196,196,68
+D0287,2026-05-15,North Gaza,Partner A,Food parcel,17,17,7
+D0288,2026-02-14,Khan Younis,Partner C,Water (litres),9024,94,18
+D0289,2026-09-11,Rafah,Partner B,Food parcel,285,95,34
+D0290,2026-09-02,Gaza City,Partner A,Hygiene kit,438,219,95
+D0291,2026-03-29,Khan Younis,Partner B,Blanket,339,113,43
+D0292,2026-06-24,Middle Area,Partner C,Water (litres),3090,30,10
+D0293,2026-06-24,Rafah,Partner C,Food parcel,106,53,17
+D0294,2026-05-11,Khan Younis,Partner B,Blanket,380,190,74
+D0295,2026-05-30,North Gaza,Partner B,Water (litres),6068,82,16
+D0296,2026-01-26,Middle Area,Partner A,Hygiene kit,322,161,71
+D0297,2026-09-17,Middle Area,Partner C,Medical kit,36,36,14
+D0298,2026-04-17,Gaza City,Partner A,Water (litres),18020,170,45
+D0299,2026-04-20,Middle Area,Partner A,Medical kit,207,207,59
+D0300,2026-02-18,Rafah,Partner A,Water (litres),10388,212,57
+D0301,2026-09-28,Middle Area,Partner B,Medical kit,97,97,20
+D0302,2026-04-13,North Gaza,Partner B,Hygiene kit,388,194,62
+D0303,2026-07-07,Khan Younis,Partner A,Medical kit,53,53,22
+D0304,2026-09-14,Middle Area,Partner C,Food parcel,220,110,42
+D0305,2026-03-25,Middle Area,Partner B,Medical kit,22,22,6
+D0306,2026-01-15,North Gaza,Partner C,Food parcel,134,67,21
+D0307,2026-04-24,Middle Area,Partner A,Water (litres),9548,124,47
+D0308,2026-03-13,Middle Area,Partner A,Food parcel,101,101,26
+D0309,2026-01-19,North Gaza,Partner B,Food parcel,471,157,45
+D0310,2026-02-06,Rafah,Partner C,Blanket,45,45,10
+D0311,2026-05-04,North Gaza,Partner A,Medical kit,115,115,46
+D0312,2026-07-13,Gaza City,Partner A,Hygiene kit,118,59,25
+D0313,2026-02-04,Rafah,Partner B,Food parcel,81,27,9
+D0314,2026-09-09,North Gaza,Partner B,Food parcel,52,52,22
+D0315,2026-06-06,Rafah,Partner C,Medical kit,127,127,36
+D0316,2026-07-14,Middle Area,Partner B,Blanket,184,46,12
+D0317,2026-08-18,Gaza City,Partner A,Hygiene kit,376,188,68
+D0318,2026-04-14,North Gaza,Partner A,Hygiene kit,142,71,29
+D0319,2026-03-17,Khan Younis,Partner A,Food parcel,339,113,19
+D0320,2026-06-27,Middle Area,Partner A,Hygiene kit,274,137,26
+D0321,2026-04-28,North Gaza,Partner B,Hygiene kit,197,197,55
+D0322,2026-03-22,Middle Area,Partner A,Blanket,240,120,18
+D0323,2026-06-05,Middle Area,Partner B,Hygiene kit,81,81,19
+D0324,2026-09-09,North Gaza,Partner A,Hygiene kit,146,146,46
+D0325,2026-05-31,North Gaza,Partner A,Water (litres),13728,208,58
+D0326,2026-05-18,Gaza City,Partner B,Hygiene kit,78,39,10
+D0327,2026-03-29,North Gaza,Partner C,Water (litres),1122,51,14
+D0328,2026-09-21,Middle Area,Partner B,Medical kit,50,50,19
+D0329,2026-10-01,Middle Area,Partner B,Hygiene kit,107,107,45
+D0330,2026-04-26,Middle Area,Partner A,Medical kit,61,61,18
+D0331,2026-05-02,Gaza City,Partner A,Hygiene kit,168,168,70
+D0332,2026-09-15,Middle Area,Partner A,Hygiene kit,67,67,21
+D0333,2026-04-18,North Gaza,Partner C,Food parcel,576,192,52
+D0334,2026-02-02,Rafah,Partner B,Water (litres),10100,100,40
+D0335,2026-09-14,North Gaza,Partner B,Food parcel,119,119,48
+D0336,2026-05-21,Gaza City,Partner B,Hygiene kit,159,159,31
+D0337,2026-07-14,Rafah,Partner B,Medical kit,16,16,7
+D0338,2026-02-10,North Gaza,Partner A,Water (litres),12017,197,75
+D0339,2026-07-19,Rafah,Partner A,Food parcel,267,89,26
+D0340,2026-09-24,North Gaza,Partner C,Medical kit,220,220,34
+D0341,2026-02-19,Gaza City,Partner A,Medical kit,61,61,14
+D0342,2026-01-20,North Gaza,Partner C,Food parcel,193,193,44
+D0343,2026-08-30,Rafah,Partner B,Hygiene kit,194,194,49
+D0344,2026-02-22,Gaza City,Partner A,Food parcel,168,84,25
+D0345,2026-09-18,Middle Area,Partner A,Food parcel,92,46,19
+D0346,2026-05-01,Gaza City,Partner C,Hygiene kit,372,186,69
+D0347,2026-03-30,North Gaza,Partner B,Blanket,192,192,51
+D0348,2026-01-31,Middle Area,Partner A,Water (litres),7254,117,42
+D0349,2026-06-18,Khan Younis,Partner B,Medical kit,28,28,12
+D0350,2026-07-04,Gaza City,Partner C,Blanket,184,184,47
+D0351,2026-04-10,North Gaza,Partner A,Water (litres),10500,125,43
+D0352,2026-04-30,Gaza City,Partner B,Blanket,116,116,45
+D0353,2026-01-25,North Gaza,Partner C,Medical kit,83,83,28
+D0354,2026-01-23,Rafah,Partner A,Food parcel,237,79,12
+D0355,2026-05-06,North Gaza,Partner B,Water (litres),2752,43,14
+D0356,2026-03-07,North Gaza,Partner B,Medical kit,146,146,42
+D0357,2026-03-21,Khan Younis,Partner A,Food parcel,290,145,61
+D0358,2026-06-01,Middle Area,Partner A,Hygiene kit,406,203,81
+D0359,2026-04-28,Khan Younis,Partner C,Hygiene kit,310,155,44
+D0360,2026-06-09,Rafah,Partner B,Blanket,135,135,30
+D0361,2026-04-28,Gaza City,Partner B,Medical kit,154,154,23
+D0362,2026-07-04,Gaza City,Partner C,Hygiene kit,194,97,28
+D0363,2026-05-30,Gaza City,Partner A,Water (litres),1160,29,9
+D0364,2026-07-02,Khan Younis,Partner B,Food parcel,294,147,37
+D0365,2026-03-01,Rafah,Partner C,Hygiene kit,65,65,17
+D0366,2026-07-04,Gaza City,Partner C,Hygiene kit,344,172,68
+D0367,2026-09-27,North Gaza,Partner C,Blanket,166,83,22
+D0368,2026-02-26,North Gaza,Partner C,Blanket,211,211,63
+D0369,2026-03-22,Khan Younis,Partner C,Water (litres),5916,174,45
+D0370,2026-08-24,Khan Younis,Partner B,Water (litres),11400,200,51
+D0371,2026-10-01,Rafah,Partner C,Medical kit,113,113,17
+D0372,2026-09-17,Khan Younis,Partner A,Blanket,273,91,35
+D0373,2026-08-16,Rafah,Partner A,Blanket,163,163,64
+D0374,2026-06-23,Middle Area,Partner B,Medical kit,77,77,34
+D0375,2026-01-10,North Gaza,Partner C,Food parcel,160,80,19
+D0376,2026-06-13,Rafah,Partner C,Medical kit,126,126,33
+D0377,2026-07-07,North Gaza,Partner B,Medical kit,188,188,81
+D0378,2026-02-08,Rafah,Partner B,Hygiene kit,80,40,12
+D0379,2026-03-24,Gaza City,Partner B,Blanket,556,139,52
+D0380,2026-06-29,Rafah,Partner B,Food parcel,116,58,15
+D0381,2026-02-12,Middle Area,Partner A,Medical kit,59,59,21
+D0382,2026-09-22,Khan Younis,Partner B,Hygiene kit,149,149,44
+D0383,2026-04-11,Khan Younis,Partner C,Hygiene kit,30,30,7
+D0384,2026-01-26,Khan Younis,Partner A,Food parcel,432,216,78
+D0385,2026-01-07,Middle Area,Partner C,Blanket,40,40,14
+D0386,2026-04-15,Gaza City,Partner C,Blanket,633,211,86
+D0387,2026-09-25,Gaza City,Partner B,Medical kit,65,65,12
+D0388,2026-09-27,Rafah,Partner A,Food parcel,22,22,4
+D0389,2026-09-29,Khan Younis,Partner B,Blanket,171,171,59
+D0390,2026-06-19,Gaza City,Partner B,Hygiene kit,105,105,16
+D0391,2026-02-24,Rafah,Partner A,Food parcel,208,104,35
+D0392,2026-01-15,North Gaza,Partner C,Hygiene kit,116,116,32
+D0393,2026-05-07,Gaza City,Partner A,Hygiene kit,26,26,6
+D0394,2026-08-26,Middle Area,Partner B,Blanket,676,169,75
+D0395,2026-02-08,Gaza City,Partner C,Blanket,374,187,51
+D0396,2026-07-28,Khan Younis,Partner A,Food parcel,217,217,43
+D0397,2026-07-07,Khan Younis,Partner B,Hygiene kit,32,16,5
+D0398,2026-03-04,Middle Area,Partner B,Medical kit,113,113,39
+D0399,2026-03-09,Khan Younis,Partner A,Water (litres),10764,156,32
+D0400,2026-05-30,Middle Area,Partner A,Hygiene kit,252,126,44
+D0401,2026-06-28,Gaza City,Partner A,Hygiene kit,195,195,40
+D0402,2026-03-11,Rafah,Partner A,Blanket,92,46,11
+D0403,2026-04-25,Khan Younis,Partner C,Blanket,352,176,42
+D0404,2026-09-05,Rafah,Partner B,Hygiene kit,73,73,31
+D0405,2026-05-18,Rafah,Partner B,Blanket,330,165,44
+D0406,2026-09-23,Gaza City,Partner A,Hygiene kit,207,207,64
+D0407,2026-05-23,Khan Younis,Partner C,Food parcel,549,183,35
+D0408,2026-01-12,Khan Younis,Partner A,Food parcel,192,192,47
+D0409,2026-03-01,North Gaza,Partner C,Medical kit,107,107,22
+D0410,2026-06-13,North Gaza,Partner A,Hygiene kit,176,88,20
+D0411,2026-07-30,Khan Younis,Partner A,Hygiene kit,85,85,22
+D0412,2026-07-03,Khan Younis,Partner C,Food parcel,549,183,52
+D0413,2026-07-29,Middle Area,Partner B,Food parcel,61,61,14
+D0414,2026-04-27,North Gaza,Partner C,Blanket,50,25,6
+D0415,2026-06-09,Gaza City,Partner A,Blanket,612,204,69
+D0416,2026-04-06,Rafah,Partner B,Hygiene kit,320,160,68
+D0417,2026-07-02,North Gaza,Partner C,Food parcel,420,210,88
+D0418,2026-01-29,Gaza City,Partner B,Food parcel,24,24,9
+D0419,2026-06-30,North Gaza,Partner C,Blanket,768,192,86
+D0420,2026-04-28,Middle Area,Partner B,Medical kit,38,38,10
+D0421,2026-06-28,Rafah,Partner A,Blanket,290,145,40
+D0422,2026-09-24,Gaza City,Partner A,Blanket,210,210,91
+D0423,2026-05-18,Gaza City,Partner C,Medical kit,56,56,17
+D0424,2026-05-12,North Gaza,Partner B,Hygiene kit,212,106,18
+D0425,2026-06-13,Gaza City,Partner C,Hygiene kit,380,190,66
+D0426,2026-05-06,Gaza City,Partner C,Food parcel,292,146,27
+D0427,2026-07-03,Middle Area,Partner A,Hygiene kit,196,196,49
+D0428,2026-03-06,Rafah,Partner A,Blanket,146,73,24
+D0429,2026-08-29,Khan Younis,Partner C,Hygiene kit,88,44,6
+D0430,2026-09-11,Gaza City,Partner B,Food parcel,60,30,6
+D0431,2026-06-12,Khan Younis,Partner B,Food parcel,112,56,16
+D0432,2026-07-09,Middle Area,Partner A,Hygiene kit,157,157,24
+D0433,2026-09-10,North Gaza,Partner C,Water (litres),10812,204,37
+D0434,2026-09-12,Khan Younis,Partner C,Blanket,189,63,9
+D0435,2026-02-20,Middle Area,Partner C,Medical kit,202,202,69
+D0436,2026-02-14,Gaza City,Partner B,Food parcel,21,21,5
+D0437,2026-04-10,Rafah,Partner C,Hygiene kit,82,41,15
+D0438,2026-06-21,Khan Younis,Partner B,Hygiene kit,360,180,39
+D0439,2026-03-15,Rafah,Partner A,Water (litres),729,27,4
+D0440,2026-07-30,North Gaza,Partner B,Hygiene kit,282,141,52
+D0441,2026-06-07,Rafah,Partner A,Medical kit,175,175,62
+D0442,2026-03-29,Gaza City,Partner B,Blanket,178,178,78
+D0443,2026-08-18,Khan Younis,Partner C,Hygiene kit,140,70,10
+D0444,2026-09-23,Khan Younis,Partner A,Hygiene kit,87,87,26
+D0445,2026-08-08,Middle Area,Partner A,Food parcel,381,127,55
+D0446,2026-04-05,Gaza City,Partner A,Blanket,360,90,35
+D0447,2026-07-02,Rafah,Partner A,Hygiene kit,270,135,41
+D0448,2026-08-12,Rafah,Partner C,Hygiene kit,117,117,46
+D0449,2026-02-04,Middle Area,Partner B,Medical kit,183,183,79
+D0450,2026-09-08,Gaza City,Partner C,Water (litres),10302,102,16
+D0451,2026-04-11,Gaza City,Partner A,Blanket,382,191,66
+D0452,2026-07-14,Rafah,Partner B,Medical kit,121,121,38
+D0453,2026-07-26,Middle Area,Partner A,Food parcel,73,73,22
+D0454,2026-03-03,Gaza City,Partner A,Water (litres),7964,181,55
+D0455,2026-05-13,Khan Younis,Partner B,Hygiene kit,156,156,48
+D0456,2026-03-03,Rafah,Partner A,Medical kit,56,56,19
+D0457,2026-08-18,Gaza City,Partner C,Medical kit,155,155,52
+D0458,2026-09-25,North Gaza,Partner B,Blanket,380,190,83
+D0459,2026-04-13,Rafah,Partner A,Blanket,426,213,55
+D0460,2026-02-03,Khan Younis,Partner B,Hygiene kit,27,27,4
+D0461,2026-04-24,Khan Younis,Partner C,Water (litres),1665,45,12
+D0462,2026-02-18,Rafah,Partner A,Hygiene kit,318,159,31
+D0463,2026-06-28,North Gaza,Partner A,Water (litres),3082,46,13
+D0464,2026-09-30,Middle Area,Partner C,Blanket,78,26,4
+D0465,2026-06-21,Rafah,Partner C,Food parcel,23,23,5
+D0466,2026-04-13,Khan Younis,Partner B,Food parcel,163,163,63
+D0467,2026-09-11,North Gaza,Partner B,Food parcel,219,219,42
+D0468,2026-06-02,Khan Younis,Partner B,Hygiene kit,330,165,71
+D0469,2026-01-12,North Gaza,Partner B,Water (litres),4452,53,15
+D0470,2026-01-21,North Gaza,Partner C,Food parcel,183,61,21
+D0471,2026-07-24,Khan Younis,Partner B,Hygiene kit,384,192,42
+D0472,2026-09-26,North Gaza,Partner C,Water (litres),4653,99,24
+D0473,2026-03-13,Rafah,Partner A,Medical kit,9,9,3
+D0474,2026-09-01,Middle Area,Partner B,Medical kit,134,134,32
+D0475,2026-06-25,Rafah,Partner A,Blanket,100,100,22
+D0476,2026-01-28,Gaza City,Partner B,Hygiene kit,168,84,14
+D0477,2026-05-19,Middle Area,Partner C,Medical kit,161,161,72
+D0478,2026-01-22,Rafah,Partner B,Food parcel,198,66,21
+D0479,2026-02-24,Middle Area,Partner A,Water (litres),8284,218,77
+D0480,2026-06-09,Middle Area,Partner C,Water (litres),7395,145,36
+D0481,2026-07-31,Middle Area,Partner B,Food parcel,585,195,48
+D0482,2026-09-08,Rafah,Partner A,Water (litres),4928,77,15
+D0483,2026-04-20,North Gaza,Partner B,Blanket,472,118,37
+D0484,2026-06-08,Gaza City,Partner A,Medical kit,31,31,11
+D0485,2026-05-14,Rafah,Partner B,Medical kit,183,183,78
+D0486,2026-02-14,Rafah,Partner C,Hygiene kit,184,92,41
+D0487,2026-07-06,Khan Younis,Partner B,Food parcel,139,139,32
+D0488,2026-05-16,Rafah,Partner A,Food parcel,627,209,48
+D0489,2026-01-15,Gaza City,Partner B,Food parcel,117,117,48
+D0490,2026-05-29,Rafah,Partner A,Food parcel,195,65,10
+D0491,2026-03-12,Rafah,Partner A,Food parcel,36,12,3
+D0492,2026-03-15,North Gaza,Partner C,Hygiene kit,84,84,28
+D0493,2026-01-19,Gaza City,Partner C,Water (litres),2254,98,33
+D0494,2026-07-31,Rafah,Partner A,Water (litres),4307,59,22
+D0495,2026-02-18,Rafah,Partner B,Water (litres),20448,213,57
+D0496,2026-08-30,North Gaza,Partner C,Food parcel,288,96,42
+D0497,2026-02-02,Khan Younis,Partner C,Medical kit,196,196,38
+D0498,2026-01-14,Gaza City,Partner C,Hygiene kit,51,51,13
+D0499,2026-07-09,Khan Younis,Partner C,Water (litres),14440,152,62
+D0500,2026-03-24,Rafah,Partner A,Medical kit,34,34,13
+D0501,2026-09-06,North Gaza,Partner C,Water (litres),19910,181,51
+D0502,2026-05-27,Middle Area,Partner B,Medical kit,150,150,33
+D0503,2026-09-05,North Gaza,Partner C,Water (litres),2597,53,14
+D0504,2026-02-20,North Gaza,Partner A,Medical kit,49,49,15
+D0505,2026-04-19,Rafah,Partner C,Hygiene kit,162,81,30
+D0506,2026-04-05,Gaza City,Partner B,Medical kit,22,22,6
+D0507,2026-09-17,Gaza City,Partner B,Water (litres),17082,219,46
+D0508,2026-01-18,North Gaza,Partner C,Food parcel,62,31,10
+D0509,2026-07-03,North Gaza,Partner B,Hygiene kit,318,159,67
+D0510,2026-07-16,Gaza City,Partner A,Food parcel,158,79,28
+D0511,2026-05-08,Gaza City,Partner B,Water (litres),7839,67,18
+D0512,2026-05-27,Middle Area,Partner C,Blanket,140,70,20
+D0513,2026-05-21,Gaza City,Partner A,Water (litres),5394,87,13
+D0514,2026-05-12,Gaza City,Partner C,Water (litres),18144,189,82
+D0515,2026-04-23,Rafah,Partner A,Food parcel,645,215,55
+D0516,2026-08-17,Gaza City,Partner B,Blanket,50,50,19
+D0517,2026-03-23,North Gaza,Partner A,Hygiene kit,184,92,16
+D0518,2026-04-01,Khan Younis,Partner B,Blanket,114,38,13
+D0519,2026-07-27,Middle Area,Partner A,Food parcel,164,164,63
+D0520,2026-01-12,North Gaza,Partner C,Hygiene kit,144,144,46
+D0521,2026-02-27,North Gaza,Partner A,Food parcel,96,96,17
+D0522,2026-09-11,Gaza City,Partner A,Medical kit,124,124,26
+D0523,2026-03-21,Rafah,Partner C,Medical kit,15,15,6
+D0524,2026-02-13,Middle Area,Partner C,Hygiene kit,72,72,16
+D0525,2026-04-05,North Gaza,Partner A,Water (litres),2075,83,17
+D0526,2026-01-29,Khan Younis,Partner B,Medical kit,107,107,26
+D0527,2026-01-26,Khan Younis,Partner C,Medical kit,87,87,31
+D0528,2026-05-22,Khan Younis,Partner C,Blanket,384,96,25
+D0529,2026-03-23,Khan Younis,Partner A,Blanket,119,119,26
+D0530,2026-09-18,Middle Area,Partner B,Medical kit,201,201,79
+D0531,2026-03-05,North Gaza,Partner A,Medical kit,215,215,58
+D0532,2026-06-20,Khan Younis,Partner B,Medical kit,186,186,82
+D0533,2026-01-05,Khan Younis,Partner B,Blanket,580,145,31
+D0534,2026-07-17,Middle Area,Partner C,Food parcel,230,115,38
+D0535,2026-06-18,North Gaza,Partner A,Medical kit,185,185,42
+D0536,2026-09-04,Middle Area,Partner B,Medical kit,165,165,74
+D0537,2026-02-07,Rafah,Partner A,Water (litres),12963,149,29
+D0538,2026-07-11,Gaza City,Partner C,Hygiene kit,108,54,10
+D0539,2026-01-27,Middle Area,Partner B,Blanket,107,107,29
+D0540,2026-05-13,Khan Younis,Partner B,Food parcel,324,108,42
+D0541,2026-09-28,Middle Area,Partner A,Blanket,552,184,49
+D0542,2026-08-21,North Gaza,Partner B,Blanket,354,177,66
+D0543,2026-03-22,North Gaza,Partner B,Hygiene kit,108,108,36
+D0544,2026-09-29,Middle Area,Partner A,Blanket,158,79,11
+D0545,2026-05-17,North Gaza,Partner B,Medical kit,60,60,25
+D0546,2026-05-15,Gaza City,Partner A,Water (litres),11049,127,43
+D0547,2026-02-19,Gaza City,Partner B,Hygiene kit,246,123,52
+D0548,2026-08-19,Khan Younis,Partner C,Water (litres),2900,25,5
+D0549,2026-08-01,Khan Younis,Partner B,Medical kit,80,80,21
+D0550,2026-03-12,Rafah,Partner C,Hygiene kit,136,68,11
+D0551,2026-04-19,Middle Area,Partner B,Food parcel,70,35,9
+D0552,2026-08-05,Khan Younis,Partner C,Food parcel,126,42,12
+D0553,2026-08-29,Khan Younis,Partner A,Blanket,136,136,38
+D0554,2026-09-13,Gaza City,Partner A,Medical kit,207,207,77
+D0555,2026-07-29,Rafah,Partner B,Food parcel,567,189,47
+D0556,2026-07-22,Khan Younis,Partner A,Food parcel,38,38,12
+D0557,2026-01-12,North Gaza,Partner A,Blanket,148,37,6
+D0558,2026-04-17,Middle Area,Partner C,Blanket,116,29,11
+D0559,2026-03-17,Khan Younis,Partner A,Food parcel,350,175,43
+D0560,2026-09-27,North Gaza,Partner B,Hygiene kit,304,152,26
+D0561,2026-07-20,Middle Area,Partner B,Water (litres),13345,157,65
+D0562,2026-01-31,Middle Area,Partner B,Water (litres),5850,78,31
+D0563,2026-05-16,Middle Area,Partner A,Hygiene kit,48,48,14
+D0564,2026-07-15,Khan Younis,Partner C,Blanket,392,196,50
+D0565,2026-06-28,Gaza City,Partner C,Blanket,195,195,71
+D0566,2026-01-09,Rafah,Partner C,Food parcel,238,119,19
+D0567,2026-04-27,Khan Younis,Partner C,Water (litres),3036,66,25
+D0568,2026-08-25,Khan Younis,Partner A,Blanket,67,67,13
+D0569,2026-03-09,North Gaza,Partner C,Hygiene kit,66,33,6
+D0570,2026-03-30,Khan Younis,Partner C,Hygiene kit,374,187,73
+D0571,2026-03-27,Gaza City,Partner A,Hygiene kit,294,147,26
+D0572,2026-02-20,North Gaza,Partner C,Blanket,216,72,26
+D0573,2026-08-19,Khan Younis,Partner C,Hygiene kit,29,29,4
+D0574,2026-08-21,Middle Area,Partner B,Hygiene kit,164,164,39
+D0575,2026-05-17,Middle Area,Partner A,Medical kit,69,69,18
+D0576,2026-01-21,Middle Area,Partner C,Blanket,162,54,11
+D0577,2026-02-21,Gaza City,Partner C,Blanket,106,53,14
+D0578,2026-07-29,North Gaza,Partner A,Food parcel,315,105,44
+D0579,2026-09-30,Rafah,Partner B,Food parcel,178,89,13
+D0580,2026-09-16,North Gaza,Partner B,Hygiene kit,278,139,45
+D0581,2026-02-19,Gaza City,Partner B,Hygiene kit,135,135,43
+D0582,2026-06-07,North Gaza,Partner A,Medical kit,168,168,42
+D0583,2026-03-23,Middle Area,Partner B,Food parcel,118,59,16
+D0584,2026-05-11,Middle Area,Partner A,Water (litres),7200,60,23
+D0585,2026-02-09,Rafah,Partner C,Blanket,39,39,15
+D0586,2026-07-25,Khan Younis,Partner A,Food parcel,69,23,7
+D0587,2026-08-04,Gaza City,Partner B,Blanket,162,162,42
+D0588,2026-03-29,Middle Area,Partner A,Hygiene kit,368,184,27
+D0589,2026-09-07,Middle Area,Partner A,Hygiene kit,81,81,33
+D0590,2026-03-05,Gaza City,Partner C,Blanket,84,84,20
+D0591,2026-05-10,Gaza City,Partner A,Medical kit,152,152,39
+D0592,2026-04-16,Middle Area,Partner A,Blanket,314,157,66
+D0593,2026-09-18,Gaza City,Partner A,Food parcel,18,18,5
+D0594,2026-04-22,Gaza City,Partner A,Food parcel,207,207,83
+D0595,2026-01-20,Khan Younis,Partner C,Blanket,174,174,41
+D0596,2026-03-07,North Gaza,Partner A,Medical kit,70,70,23
+D0597,2026-09-24,North Gaza,Partner C,Hygiene kit,66,33,14
+D0598,2026-01-26,Gaza City,Partner C,Medical kit,212,212,83
+D0599,2026-06-29,North Gaza,Partner A,Blanket,166,166,40
+D0600,2026-08-03,Khan Younis,Partner A,Food parcel,37,37,13
